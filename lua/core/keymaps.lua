@@ -73,3 +73,30 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+--Lets get rusty config
+vim.keymap.set('n', ';', ':', { desc = 'CMD enter command mode' })
+vim.keymap.set('i', 'jk', '<ESC>')
+
+-- vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Nvim DAP
+vim.keymap.set('n', '<Leader>dl', "<cmd>lua require'dap'.step_into()<CR>", { desc = 'Debugger step into' })
+vim.keymap.set('n', '<Leader>dj', "<cmd>lua require'dap'.step_over()<CR>", { desc = 'Debugger step over' })
+vim.keymap.set('n', '<Leader>dk', "<cmd>lua require'dap'.step_out()<CR>", { desc = 'Debugger step out' })
+vim.keymap.set('n', '<Leader>dc', "<cmd>lua require'dap'.continue()<CR>", { desc = 'Debugger continue' })
+vim.keymap.set('n', '<Leader>db', "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = 'Debugger toggle breakpoint' })
+vim.keymap.set(
+  'n',
+  '<Leader>dd',
+  "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+  { desc = 'Debugger set conditional breakpoint' }
+)
+vim.keymap.set('n', '<Leader>de', "<cmd>lua require'dap'.terminate()<CR>", { desc = 'Debugger reset' })
+vim.keymap.set('n', '<Leader>dr', "<cmd>lua require'dap'.run_last()<CR>", { desc = 'Debugger run last' })
+
+-- rustaceanvim
+vim.keymap.set('n', '<Leader>dt', "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = 'Debugger testables' })
+
+--Floaterm keymaps
+vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>tn', ':FloatermNew<CR>', { noremap = true, silent = true })

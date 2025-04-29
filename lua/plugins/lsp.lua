@@ -188,6 +188,10 @@ return {
       terraformls = {},
       jsonls = {},
       yamlls = {},
+      rust_analyzer = {},
+      terraformls = {},
+      ts_ls = {},
+      clangd = {},
 
       lua_ls = {
         -- cmd = {...},
